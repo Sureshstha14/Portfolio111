@@ -1,0 +1,242 @@
+*{
+margin: 0;
+padding: 0;
+color: white;
+box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.head_section{
+    width: 100%;
+    height: 100vh;
+    background-image: url('C:/Users/admin/Desktop/newReact/myproject/src/Websites/Portfolio/portfolioSubash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: fade 1s forwards ease;
+    animation-delay: 1s;
+    transition:.6s;
+    position: relative;
+    z-index: 1;
+}
+.head_section::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.1);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+@keyframes fade {
+    100%{
+        opacity: 1;
+    }   
+}
+nav{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+.logo{
+    font-size: 24px;
+    margin-left: 5px;
+}
+.logo .start_S{
+    color: red;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar li{
+    list-style: none;
+}
+.bars{
+    width:50px;
+    height: 20px;
+    display: none;
+}
+.navbar a:hover{
+    color: red;
+    border-bottom: 2px solid red;
+    transition: all ease-in-out .3s;
+}
+ul .active{
+    display: block;
+}
+@media(max-width:1000px){
+    nav .bars{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .active {
+        margin-top: 350px;
+        margin-left: -80px;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 5px 5px;
+        background-color:aqua;
+        z-index: 3;
+    }
+    nav ul li a:hover{
+        color: red;
+        border-bottom: 2px solid red;
+    }
+    
+}
+.client_info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.client_info h1{
+    margin: 10px 10px;
+    font-size: 35px;
+    font-weight: 600;
+}
+.intro{
+    font-size: 40px;
+}
+.client_info p{
+    width: 50%;
+    line-height: 30px;
+    font-size: 20px;
+}
+.client_info .learnMore{
+    width: 150px;
+    height: 40px;
+    border: 2px solid white;
+    font-size: 25px;
+    margin-top: 20px;
+    /* color: black; */
+    padding: 5px 5px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0px 0px 0 rgb(123, 182, 227);
+    transition: .6s !important;
+    overflow: hidden;
+}
+.learnMore::after{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0%;
+    background-color: rgba(77, 171, 199);
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+    z-index: -1;
+    /* display: none; */
+}
+.learnMore:hover::after{
+    top: 100%;
+}
+.learnMore:hover{
+    box-shadow: 5px 5px 0  rgb(123, 182, 227);
+}
+.icon{
+    width: 400px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+.icon li{
+    list-style: none;
+}
+.icon li a{
+    text-decoration: none;
+}
+.icon li a i:hover{
+    color: aqua;
+    transition: all .3s;
+    cursor: pointer;
+}
+.slider_container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(198, 91, 91);
+    position: relative;
+}
+.slider_images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 50px;
+}
+.slider_img{
+    width: 120px;
+    cursor: pointer;
+    transition: .7s ease;
+    position: relative;
+}
+.slider_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.slider_images .slider_img:first-child,.slider_img:last-child{
+    height: 480px;
+}
+.slider_img:nth-child(2),.slider_img:nth-child(6){
+    height: 560px;
+}
+.slider_img:nth-child(3),.slider_img:nth-child(4),.slider_img:nth-child(5){
+    height: 660px;
+}
+.slider_img h1{
+    font-family: 'Jost',sans-serif;
+    position: absolute;
+    top: 40%;
+    /* left: -5%; */
+    text-transform: uppercase;
+    transform: rotate(270deg);
+    text-align: left;
+}
+.details{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+.details p{
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+}
+.slider_img .active{
+    height: 700px;
+    width: 700px;
+    transition: .2s ease;
+}
+.slider_img.active h1{
+    display: none;
+}
